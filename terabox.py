@@ -307,12 +307,6 @@ async def handle_message(client, message: Message):
 
     is_member = await is_user_member(client, user_id)
 
-    if not is_member:
-        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/ultroid_official")
-        reply_markup = InlineKeyboardMarkup([[join_button]])
-        await message.reply_text("You must join my channel to use me.", reply_markup=reply_markup)
-        return
-
     terabox_link = message.text.strip()
 
     if not is_terabox_link(terabox_link):
